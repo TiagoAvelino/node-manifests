@@ -9,13 +9,6 @@ metadata:
     app.kubernetes.io/instance: simple-node
     app.kubernetes.io/name: simple-node
     app.kubernetes.io/part-of: simple-node
-    app.openshift.io/runtime: java
-  annotations:
-    app.openshift.io/vcs-ref: ''
-    app.openshift.io/vcs-uri: 'https://github.com/TiagoAvelino/Simple-node-application'
-    openshift.io/generated-by: OpenShiftWebConsole
-    openshift.io/host.generated: 'true'
-    argocd.argoproj.io/sync-wave: "30"
 spec:
   host: simple-node-simple-node.apps.tiago-cluster.sandbox2099
   to:
