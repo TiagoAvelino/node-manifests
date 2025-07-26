@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node
+  namespace: simple-node
+  labels:
+    app: simple-node
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  selector:
+    matchLabels:
+      app: simple-node
+  template:
+    metadata:
+      labels:
+        app: simple-node
+    spec:
+      containers:
+        - name: simple-node
+          image: quay.io/rh_ee_tavelino/ci-quarkus:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8443
+              protocol: TCP
+      imagePullSecrets:
+        - name: my-quay-secret

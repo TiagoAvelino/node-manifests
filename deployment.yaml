@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node
+  namespace: quarkus-app
+spec:
+  selector:
+    matchLabels:
+      app: simple-node
+  template:
+    metadata:
+      labels:
+        app: simple-node
+        deployment: simple-node
+    spec:
+      containers:
+      - name: simple-node
+        image: quay.io/rh_ee_tavelino/quarkusapp:latest@sha256:b9f53cb36d7f38ebc2239b5c57c981a180cc1106d658d9ddd10ec164efa85e8d
