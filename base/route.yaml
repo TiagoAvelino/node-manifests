@@ -1,7 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: simple-node1
+  name: simple-node
   namespace: simple-node
   labels:
     app: simple-node
