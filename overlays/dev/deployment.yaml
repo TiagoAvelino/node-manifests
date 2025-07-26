@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: simple-node
-        image: quay.io/rh_ee_tavelino/ci-quarkus:latest
+        image: image-registry.openshift-image-registry.svc.cluster.local:5000/cicd-pipelines/simple-node-app:latest@latest
