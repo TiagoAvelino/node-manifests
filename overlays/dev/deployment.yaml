@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: simple-node
-        image: quay.io/rh_ee_tavelino/quarkusapp:latest
+        image: quay.io/rh_ee_tavelino/ci-quarkus:latest
