@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/name: simple-node
     app.kubernetes.io/part-of: simple-node
 spec:
-  host: simple-node-simple-node.apps.tiago-cluster.sandbox2099
+  host: simple-node-simple-node.apps.tiago-cluster.sandbox2099.opentlc.com
   to:
     kind: Service
     name: simple-node
