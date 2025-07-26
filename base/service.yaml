@@ -1,11 +1,8 @@
-kind: Route
-apiVersion: route.openshift.io/v1
+apiVersion: v1
+kind: Service
 metadata:
   name: simple-node
   namespace: simple-node
-  uid: 4412c90d-2ae0-4cd5-991e-363c165df6f9
-  resourceVersion: '304407'
-  creationTimestamp: '2025-07-26T20:46:37Z'
   labels:
     app: simple-node
     app.kubernetes.io/component: simple-node
@@ -15,23 +12,22 @@ metadata:
     app.openshift.io/runtime: java
     app.openshift.io/runtime-version: openjdk-17-ubi8
   annotations:
-    openshift.io/host.generated: 'true'
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/TiagoAvelino/Simple-node-application'
+    openshift.io/generated-by: OpenShiftWebConsole
+    argocd.argoproj.io/sync-wave: "30"
+
 spec:
-  host: simple-node-simple-node.apps.tiago-cluster.sandbox2099.opentlc.com
-  to:
-    kind: Service
-    name: simple-node
-    weight: 100
-  port:
-    targetPort: 8080-tcp
-  wildcardPolicy: None
-status:
-  ingress:
-    - host: simple-node-simple-node.apps.tiago-cluster.sandbox2099.opentlc.com
-      routerName: default
-      conditions:
-        - type: Admitted
-          status: 'True'
-          lastTransitionTime: '2025-07-26T20:46:37Z'
-      wildcardPolicy: None
-      routerCanonicalHostname: router-default.apps.tiago-cluster.sandbox2099.opentlc.com
+  type: ClusterIP
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: 8443-tcp
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+  selector:
+    app: simple-node
+    deployment: simple-node
