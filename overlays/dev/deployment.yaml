@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: simple-node
-        image: image-registry.openshift-image-registry.svc.cluster.local:5000/cicd-pipelines/simple-node:latest@sha256:57c6c733c138d0c30be3336c356f500614910fe12ba145ad70f891b288a9afb2
+        image: image-registry.openshift-image-registry.svc.cluster.local:5000/cicd-pipelines/simple-node:latest@sha256:fe5fbda4e797050e6c51ec31bdf9302f5e5db3fee8d3bcd33e9552eaca2f40f0
